@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>風速アラート</title>
-</head>
-<body>
-    <h1>{{ city }} の現在の風速：{{ wind_speed }} m/s</h1>
-    {% if alert %}
-        <p style="color: red;">⚠️ 強風注意！</p>
-    {% else %}
-        <p>風速は安全レベルです。</p>
-    {% endif %}
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}ドア注意アラート{% endblock %}
+
+{% block content %}
+  <h1>風速: {{ wind_speed }} m/s</h1>
+  {% if alert %}
+    <div class="alert alert-danger">⚠️ 風が強いのでドアに注意！</div>
+  {% else %}
+    <div class="alert alert-info">風は穏やかです。</div>
+  {% endif %}
+{% endblock %}
