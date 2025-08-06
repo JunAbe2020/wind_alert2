@@ -3,9 +3,7 @@ import requests
 import datetime
 from django.shortcuts import render
 from django.core.cache import cache
-from dotenv import load_dotenv
 
-load_dotenv()
 API_KEY = os.getenv("OPENWEATHERMAP_API_KEY")
 
 def get_weather_data(city):
